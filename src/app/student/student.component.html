@@ -1,0 +1,39 @@
+<app-menu></app-menu>
+<div class="card" style="width: 94%; margin-left: 3%;">
+  <div class="card-header" style="text-align: left;">
+      <strong>Student List</strong>
+  </div>
+  <div class="card-body">
+    <div class='row'>
+      <div class='col-md-1 col-sm-1' style="text-align: left;">Filter by:</div>
+      <div class='col-md-5 col-sm-5'>
+        <input type='text' [(ngModel)]='listFilter' />
+      </div>
+      <div class="col-md-6 col-sm-6"></div>
+    </div>
+    <div class='row' *ngIf='listFilter'>
+      <div class='col-md-6 col-sm-6' style="text-align: left;">
+        <h4>Filtered by: {{listFilter}}</h4>
+      </div>
+    </div>
+    <div class='table-responsive'>
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Student Id</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Student Course</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of filteredStudents">
+            <td><a [routerLink]="['/student-details',student.studId]">{{student.studId}}</a></td>
+            <td>{{student.studName}}</td>
+            <td>{{student.studCourse}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer"></div>
+</div>

@@ -1,0 +1,32 @@
+[
+    {
+        "courseId": 101,
+        "courseName": "MCA",
+        "courseDur": "3 Years",
+        "courseFee": 63000
+    },
+    {
+        "courseId": 102,
+        "courseName": "BCA",
+        "courseDur": "3 Years",
+        "courseFee": 50000
+    },
+    {
+        "courseId": 103,
+        "courseName": "PGDCA",
+        "courseDur": "1 Years",
+        "courseFee": 15000
+    },
+    {
+        "courseId": 104,
+        "courseName": "Tally",
+        "courseDur": "3 Months",
+        "courseFee": 5000
+    },
+    {
+        "courseId": 105,
+        "courseName": "BEST",
+        "courseDur": "1 Month",
+        "courseFee": 2000
+    }
+]

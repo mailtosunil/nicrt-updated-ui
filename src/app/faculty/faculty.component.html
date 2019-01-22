@@ -1,0 +1,39 @@
+<app-menu></app-menu>
+<div class="card" style="width: 94%; margin-left: 3%;">
+  <div class="card-header" style="text-align: left;">
+      <strong>Faculty List</strong>
+  </div>
+  <div class="card-body">
+    <div class='row'>
+      <div class='col-md-1 col-sm-1' style="text-align: left;">Filter by:</div>
+      <div class='col-md-5 col-sm-5' >
+        <input type='text' [(ngModel)]='listFilter' />
+      </div>
+      <div class="col-md-6 col-sm-6"></div>
+    </div>
+    <div class='row' *ngIf='listFilter'>
+      <div class='col-md-6 col-sm-6' style="text-align: left;">
+        <h4>Filtered by: {{listFilter}}</h4>
+      </div>
+    </div>
+    <div class='table-responsive'>
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Faculty Id</th>
+            <th scope="col">Faculty Name</th>
+            <th scope="col">Faculty Qualification</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let faculty of filteredFaculties">
+                <td><a [routerLink]="['/faculty-details',faculty.facultyId]">{{faculty.facultyId}}</a></td>
+                <td>{{faculty.facultyName}}</td>
+                <td>{{faculty.facultyQual}}</td>
+              </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer"></div>
+</div>

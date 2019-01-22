@@ -1,0 +1,45 @@
+<div class="card" style="width: 94%; margin-left: 3%;">
+  <div class="card-header" style="text-align: left;">
+    <strong>Please Sign Up here....!</strong>
+  </div>
+  <div class="card-body">
+    <div class="form-row">
+      <div class="form-group col-md-4 col-sm-4">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]="name" placeholder="Name">
+      </div>
+      <div class="form-group col-md-4 col-sm-4">
+        <label for="lname">Last Name</label>
+        <input type="text" class="form-control" name="lname" [(ngModel)]="lname" placeholder="Last Name">
+      </div>
+      <div class="form-group col-md-4 col-sm-4">
+        <label for="userName">User Name</label>
+        <input type="text" class="form-control" name="userName" [(ngModel)]="userName" placeholder="User Name">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4 col-sm-4">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="password" placeholder="Password">
+      </div>
+      <div class="form-group col-md-4 col-sm-4">
+        <label for="password">Email</label>
+        <input type="password" class="form-control" name="email" [(ngModel)]="email" placeholder="Email">
+      </div>
+      <div class="form-group col-md-4 col-sm-4">
+        <label for="password">Role</label>
+        <ng-multiselect-dropdown [placeholder]="'Role'" [data]="roleDropdownList" [(ngModel)]="selectedRoleItems"
+          [settings]="roleDropdownSettings" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+        </ng-multiselect-dropdown>
+      </div>
+    </div>
+    <div class="form-group col-md-12 col-sm-12">
+      <button type="button" class="btn-sm btn-success" (click)="userSignUp()" style="margin-left: 90%;">Save</button>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button class='btn-sm btn-outline-secondary' (click)='onBack()' style='width:80px'>
+      <i class='fa fa-chevron-left'></i> Back
+    </button>
+  </div>
+</div>

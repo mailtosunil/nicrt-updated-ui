@@ -1,0 +1,41 @@
+<app-menu></app-menu>
+  <div class="card" style="width: 94%; margin-left: 3%;">
+    <div class="card-header" style="text-align: left;">
+      <strong>Course List</strong>
+    </div>
+    <div class="card-body">
+      <div class='row'>
+        <div class='col-md-1 col-sm-1' style="text-align: left;">Filter by:</div>
+        <div class='col-md-5 col-sm-5'>
+          <input type='text' [(ngModel)]='listFilter' />
+        </div>
+        <div class='col-md-6 col-sm-6'></div>
+      </div>
+      <div class='row' *ngIf='listFilter'>
+        <div class='col-md-6 col-sm-6' style="text-align: left;">
+          <h4>Filtered by: {{listFilter}}</h4>
+        </div>
+      </div>
+      <div class='table-responsive'>
+        <table class="table table-striped" *ngIf='courses && courses.length'>
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Course Id</th>
+              <th scope="col">Course Name</th>
+              <th scope="col">Course Duration</th>
+              <th scope="col">Course Fee</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let course of filteredCourses">
+              <td><a [routerLink]="['/course-details',course.courseId]">{{course.courseId}}</a></td>
+              <td>{{course.courseName}}</td>
+              <td>{{course.courseDur}}</td>
+              <td>{{course.courseFee}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card-footer"></div>
+  </div>

@@ -1,0 +1,100 @@
+<app-menu></app-menu>
+<div class="card" style="width: 94%; margin-left: 3%;">
+  <div class="card-header" style="text-align: left;">
+    <strong>Faculty Form</strong>
+  </div>
+  <div class="card-body">
+    <!--<div class="jumbotron">-->
+    <form>
+      <div class="form-row" *ngIf="successMsg">
+        <div class="form-group col-md-12 col-sm-12">
+          <div class="alert alert-success"> <strong>{{ successMsg }}</strong></div>
+        </div>
+      </div>
+      <div class="form-row" *ngIf="errorMsg">
+        <div class="form-group col-md-12 col-sm-12">
+          <div class="alert alert-danger"> <strong>{{ errorMsg }}</strong></div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-8 col-sm-8"></div>
+        <div class="form-group col-md-4 col-sm-4">
+          <label for="facultyImg">Upload Faculty Photo</label>
+          <input type="file" class="form-control-file" name="facultyImg" [(ngModel)]="facultyImg">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Name" [(ngModel)]="facultyName">
+        </div>
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="fname">Qualification</label>
+          <select id="maritalSts" class="form-control" [(ngModel)]="facultyQual">
+            <option selected>Choose...</option>
+            <option>SSC</option>
+            <option>Intermediate</option>
+            <option>Graduate</option>
+            <option>Post Graduate</option>
+          </select>
+        </div>
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="dob">Date Of Birth</label>
+          <input class="form-control" placeholder="yyyy-mm-dd" name="dob" [(ngModel)]="facultyDob" ngbDatepicker #d="ngbDatepicker"
+            (click)="d.toggle()" readonly>
+        </div>
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="gender">Gender</label>
+          <!--<input type="text" class="form-control" id="gender" placeholder="Gender">-->
+          <select id="gender" class="form-control" [(ngModel)]="gender">
+            <option selected>Choose...</option>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="maritalSts">Marital Status</label>
+          <select id="maritalSts" class="form-control" [(ngModel)]="maritalSts">
+            <option>Choose...</option>
+            <option>Married</option>
+            <option>Unmarried</option>
+          </select>
+        </div>
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="nationality">Nationality</label>
+          <select id="maritalSts" class="form-control" [(ngModel)]="nationality">
+            <option>Choose...</option>
+            <option>Indian</option>
+            <option>Non-Indian</option>
+          </select>
+        </div>
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="pcell">Mobile</label>
+          <input type="text" class="form-control" id="pcell" placeholder="Mobile no" [(ngModel)]="mobile">
+        </div>
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="course">Course</label>
+          <select id="course" class="form-control" [(ngModel)]="course">
+            <option>Choose...</option>
+            <option>BCA</option>
+            <option>MCA</option>
+            <option>PGDCA</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-lg-4 col-md-4"></div>
+        <div class="col-sm-4 col-lg-4 col-md-4"></div>
+        <div class="col-sm-4 col-lg-4 col-md-4">
+          <button type="button" class="btn-sm btn-success pull-right">Save</button>
+        </div>
+      </div>
+    </form>
+    <!--</div>-->
+  </div>
+  <div class="card-footer">
+    <p style="text-align: left;">Copyright <span class="glyphicon glyphicon-copyright-mark"></span> 2018,UMED, Odisha</p>
+  </div>
+</div>

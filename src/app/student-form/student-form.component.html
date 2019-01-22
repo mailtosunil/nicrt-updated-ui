@@ -1,0 +1,189 @@
+<app-menu></app-menu>
+<div class="card" style="width: 94%; margin-left: 3%;">
+  <div class="card-header" style="text-align: left;">
+    <strong>Student Form</strong>
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="row" *ngIf="successMsg">
+        <div class="col-sm-3 col-lg-3 col-md-3"></div>
+        <div class="col-sm-6 col-lg-6 col-md-6">
+          <div class="alert alert-danger"><strong>{{successMsg}}</strong></div>
+        </div>
+        <div class="col-sm-3 col-lg-3 col-md-3"></div>
+      </div>
+      <div class="row" *ngIf="errorMsg">
+        <div class="col-sm-3 col-lg-3 col-md-3"></div>
+        <div class="col-sm-6 col-lg-6 col-md-6">
+          <div class="alert alert-danger"><strong>{{errorMessage}}</strong></div>
+        </div>
+        <div class="col-sm-3 col-lg-3 col-md-3"></div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-2 col-sm-2">
+          <label for="inputEmail4">Form No.</label>
+          <input type="email" class="form-control" name="formno" [(ngModel)]="formno" placeholder="Form No.">
+        </div>
+        <div class="form-group col-md-6 col-sm-6"></div>
+        <div class="form-group col-md-4 col-sm-4">
+          <label for="studentImg">Upload Student Photo</label>
+          <input type="file" class="form-control-file" name="studentImg" [(ngModel)]="studentImg">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="studName">Name</label>
+          <input type="text" class="form-control" name="studName" [(ngModel)]="studName" placeholder="Name">
+        </div>
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="studFthName">Father's Name</label>
+          <input type="text" class="form-control" name="studFthName" [(ngModel)]="studFthName" placeholder="Father's Name">
+        </div>
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="studDob">Date Of Birth</label>
+          <input class="form-control" placeholder="yyyy-mm-dd" name="studDob" [(ngModel)]="studDob" ngbDatepicker #d="ngbDatepicker"
+            (click)="d.toggle()" readonly>
+        </div>
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="studGender">Gender</label>
+          <select class="form-control" name="studGender" [(ngModel)]="studGender">
+            <option selected>Choose...</option>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="studCat">Category</label>
+          <select class="form-control" name="studCat" [(ngModel)]="studCat">
+            <option selected>Choose...</option>
+            <option>GEN</option>
+            <option>OBC</option>
+            <option>SC</option>
+            <option>ST</option>
+          </select>
+        </div>
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="studMaritalSts">Marital Status</label>
+          <select class="form-control" name="studMaritalSts" [(ngModel)]="studMaritalSts">
+            <option selected>Choose...</option>
+            <option>Married</option>
+            <option>Unmarried</option>
+          </select>
+        </div>
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="studNationality">Nationality</label>
+          <input type="text" class="form-control" name="studNationality" [(ngModel)]="studNationality" placeholder="nationality">
+        </div>
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="studCourse">Course</label>
+          <select class="form-control" name="studCourse" [(ngModel)]="studCourse">
+            <option selected>Choose...</option>
+            <option>BCA</option>
+            <option>MCA</option>
+            <option>PGDCA</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="duration">Duration</label>
+          <input type="text" class="form-control" name="duration" [(ngModel)]="duration" placeholder="Course Duration">
+        </div>
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="timing">Timing</label>
+          <input type="text" class="form-control" name="timing" [(ngModel)]="timing" placeholder="Batch Timing">
+        </div>
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="language">Language</label>
+          <select name="language" class="form-control" [(ngModel)]="language">
+            <option selected>Choose...</option>
+            <option>Hindi</option>
+            <option>English</option>
+          </select>
+        </div>
+        <div class="form-group col-md-3 col-sm-3">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" name="email" [(ngModel)]="email" placeholder="Email">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6 col-sm-6">
+          <label for="paddress">Permanent Address</label>
+          <!--<textarea class="form-control" id="paddress" rows="2" placeholder="Permanent Address"></textarea>-->
+          <table class="table">
+            <tbody>
+              <tr>
+                <td class="row">Area</td>
+                <td><input type="text" class="form-control" name="permAddrArea" [(ngModel)]="permAddrArea" placeholder="Area"></td>
+                <td class="row">Street</td>
+                <td><input type="text" class="form-control" name="permAddrStreet" [(ngModel)]="permAddrStreet"
+                    placeholder="Street"></td>
+              </tr>
+              <tr>
+                <td class="row">City</td>
+                <td><input type="text" class="form-control" name="permAddrCity" [(ngModel)]="permAddrCity" placeholder="City"></td>
+                <td class="row">State</td>
+                <td><input type="text" class="form-control" name="permAddrState" [(ngModel)]="permAddrState"></td>
+              </tr>
+              <tr>
+                <td class="row">Landmark</td>
+                <td><input type="text" class="form-control" name="permAddrlandMrk" [(ngModel)]="permAddrlandMrk"
+                    placeholder="Landmark"></td>
+                <td class="row">Mobile</td>
+                <td class="form-group-prepend">
+                  <input type="text" class="form-control" name="pcell" [(ngModel)]="pcell" placeholder="10 digit mobile no">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="form-group col-md-6 col-sm-6">
+          <label for="caddress">Corresponding Address</label>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td class="row">Area</td>
+                <td><input type="text" class="form-control" name="corrAddrArea" [(ngModel)]="corrAddrArea" placeholder="Area"></td>
+                <td class="row">Street</td>
+                <td><input type="text" class="form-control" name="corrAddrStreet" [(ngModel)]="corrAddrStreet"
+                    placeholder="Street"></td>
+              </tr>
+              <tr>
+                <td class="row">City</td>
+                <td><input type="text" class="form-control" name="corrAddrCity" [(ngModel)]="corrAddrCity" placeholder="City"></td>
+                <td class="row">State</td>
+                <td><input type="text" class="form-control" name="corrAddrState" [(ngModel)]="corrAddrState"></td>
+              </tr>
+              <tr>
+                <td class="row">Landmark</td>
+                <td><input type="text" class="form-control" name="corrAddrlandMrk" [(ngModel)]="corrAddrlandMrk"
+                    placeholder="Landmark"></td>
+                <td class="row">Mobile</td>
+                <td class="form-group-prepend">
+                  <input type="text" class="form-control" name="ccell" [(ngModel)]="ccell" placeholder="10 digit mobile no">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-lg-4 col-md-4"></div>
+        <div class="col-sm-4 col-lg-4 col-md-4"></div>
+        <div class="col-sm-4 col-lg-4 col-md-4">
+          <button type="button" class="btn-sm btn-success pull-right">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="card-footer">
+    <p style="text-align: left;">Copyright <span class="glyphicon glyphicon-copyright-mark"></span> 2018,UMED, Odisha</p>
+  </div>
+</div>

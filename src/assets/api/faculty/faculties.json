@@ -1,0 +1,26 @@
+[
+    {
+        "facultyId": 201,
+        "facultyName": "Satya Ranjan Mahakul",
+        "facultyQual": "BA",
+        "facultyImg": ""
+    },
+    {
+        "facultyId": 202,
+        "facultyName": "Sushana Nayak",
+        "facultyQual": "BCom",
+        "facultyImg": ""
+    },
+    {
+        "facultyId": 203,
+        "facultyName": "Rakesh Mohanty",
+        "facultyQual": "BCA",
+        "facultyImg": ""
+    },
+    {
+        "facultyId": 204,
+        "facultyName": "Somesh Chaterjee",
+        "facultyQual": "MCA",
+        "facultyImg": ""
+    }
+]

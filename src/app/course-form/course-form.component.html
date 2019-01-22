@@ -1,0 +1,54 @@
+<app-menu></app-menu>
+<div class="card" style="width: 94%; margin-left: 3%;">
+  <div class="card-header" style="text-align: left;">
+    <strong>Course Form</strong>
+  </div>
+  <div class="card-body">
+    <!--<div class="jumbotron">-->
+    <form>
+      <div class="form-row" *ngIf="successMsg">
+        <div class="form-group col-md-12 col-sm-12">
+          <div class="alert alert-success"> <strong>{{ successMsg }}</strong></div>
+        </div>
+      </div>
+      <div class="form-row" *ngIf="errorMsg">
+        <div class="form-group col-md-12 col-sm-12">
+          <div class="alert alert-danger"> <strong>{{ errorMsg }}</strong></div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4 col-sm-4">
+          <label for="courseName">Name</label>
+          <input type="text" class="form-control" name="courseName" [(ngModel)]="courseName" placeholder="Course Name">
+        </div>
+        <div class="form-group col-md-4 col-sm-4">
+          <label for="courseDur">Duration</label>
+          <select class="form-control" name="courseDur" [(ngModel)]="courseDur">
+            <option selected>Choose...</option>
+            <option>1 Month</option>
+            <option>3 Months</option>
+            <option>6 Months</option>
+            <option>1 Year</option>
+            <option>1.5 Years</option>
+            <option>2 Years</option>
+          </select>
+        </div>
+        <div class="form-group col-md-4 col-sm-4">
+          <label for="courseFee">Fee</label>
+          <input type="text" class="form-control" name="courseFee" [(ngModel)]="courseFee" placeholder="Course Fee">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-lg-4 col-md-4"></div>
+        <div class="col-sm-4 col-lg-4 col-md-4"></div>
+        <div class="col-sm-4 col-lg-4 col-md-4">
+          <button type="button" class="btn-sm btn-success pull-right" (click)="saveCourse()">Save</button>
+        </div>
+      </div>
+    </form>
+    <!--</div>-->
+  </div>
+  <div class="card-footer">
+    <p style="text-align: left;">Copyright <span class="glyphicon glyphicon-copyright-mark"></span> 2018,UMED, Odisha</p>
+  </div>
+</div>
